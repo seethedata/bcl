@@ -26,12 +26,12 @@ export class ProductsComponent implements OnInit{
         }
 
 	hideLease(product: Product): void {
-		this.selectedProduct = product
+		this.selectedProduct = product;
 		this.selectedProduct.showLease = false;
 	}
 
 	showLease(product: Product): void {
-		this.selectedProduct = product
+		this.selectedProduct = product;
 		this.selectedProduct.showLease = true;
 	}
 	
