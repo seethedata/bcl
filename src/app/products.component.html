@@ -1,9 +1,46 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div>
-	The products we have are:<br/>
-	<ul>
-		<li *ngFor='let product of products'>
-		{{product.name}}
-		</li>
-	</ul>
+<img alt="Pathfinder Logo" id="pathfinder" class="center-block" src="assets/images/Pathfinder-Logo.png"/>
+<div id="listings" class="container" >
+	<div id="items" class="row">
+	<form *ngFor='let product of products'>
+		<div class="col-md-4">
+	                <div class="panel panel-primary">
+               		         <div class="panel-heading">
+					 <h3 class="panel-title text-center">{{product.name}}</h3>
+                        	</div>
+                        	<div class="panel-body">
+					<img class="center-block productImage" id="{{product.model}}" src="assets/images/{{product.image}}"/>
+					<div class="form-group">
+						<div class="productPrice text-center">
+							{{product.price | currency:'USD':true}}
+						</div>
+						<div class="center-block form-group" style="width:9em">
+							<label for="{{product.model}}-n">Buy</label>
+							<input type="radio" name="{{product.model}}-radio" id="{{product.model}}-y" value="n" 
+								(click)="hideLease(product)"/>
+							<label for="{{product.model}}-y">Lease</label>
+							<input type="radio" name="{{product.model}}-radio" id="{{product.model}}-n" value="y" 
+								(click)="showLease(product)" checked>
+						</div>
+						<div *ngIf="product.showLease == true">
+							<div class="text-center leaseOptions-{{product.model}}">Lease Duration(Months)</div>
+							<div class="center-block leaseOptions-{{product.model}} btn-group" data-toggle="buttons" style="width:9em">
+								<label class="btn btn-primary active">
+									<input id="{{product.model}}-months-36" type="radio" name="{{product.model}}-months" value="36"/> 36 
+								</label>
+								<label class="btn btn-primary">
+									<input id="{{product.model}}-months-48" type="radio" name="{{product.model}}-months" value="48"/> 48 
+								</label>
+								<label class="btn btn-primary">
+									<input id="{{product.model}}-months-60" type="radio" name="{{product.model}}-months" value="60"/> 60 
+								</label>
+							</div>
+						</div>
+		
+					</div>
+				</div>
+				<button type="submit" class="btn center-block btn-success" style="margin-bottom : 1em">Buy</button>
+			</div>
+			</div>
+	</form>
+	</div>
 </div>

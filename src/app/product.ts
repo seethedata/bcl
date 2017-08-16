@@ -3,4 +3,5 @@ export class Product {
         model: string;
         image: string;
         price: number;
+        showLease: boolean;
 }
