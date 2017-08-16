@@ -3,19 +3,19 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Product } from './product';
+import { Lease } from './lease';
 
 
 @Injectable()
-export class ProductService {
-	private productsUrl='api/products';
+export class LeaseService {
+	private leasesUrl='api/leases';
 	
 	constructor(private http: Http){ }
 
-	getProducts(): Promise<Product[]> {
-		return this.http.get(this.productsUrl)
+	getLeases(): Promise<Lease[]> {
+		return this.http.get(this.leasesUrl)
 			.toPromise()
-			.then(response=>response.json().data as Product[])
+			.then(response=>response.json().data as Lease[])
 			.catch(this.handleError);
 	}
 
