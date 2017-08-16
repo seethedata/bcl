@@ -5,7 +5,6 @@ import { HttpModule }    from '@angular/http';
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
-import { LeaseInMemoryDataService }  from './lease-in-memory-data.service';
 
 import { AppComponent } from './app.component';
 import { ShopComponent } from './shop.component';
@@ -27,7 +26,6 @@ import { AppRoutingModule }   from './app-routing.module';
   BrowserModule,
   HttpModule,
   InMemoryWebApiModule.forRoot(InMemoryDataService),
-  InMemoryWebApiModule.forRoot(LeaseInMemoryDataService),
   AppRoutingModule
   ],
   providers: [ProductService, LeaseService],

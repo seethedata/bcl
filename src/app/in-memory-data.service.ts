@@ -7,7 +7,8 @@ export class InMemoryDataService implements InMemoryDbService {
      {name: "VMAX 950", model: "vmax950", image: "vmax.png", price: 650000, showLease: true},
      {name: "VxBlock 540", model: "vxblock540", image: "vxblock.png", price: 1000000, showLease: true}
     ];
-    return {products};
+    let leases = [{}];
+    return {products, leases};
   }
 }
 
