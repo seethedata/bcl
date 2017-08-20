@@ -13,6 +13,7 @@ import { ProductsComponent } from './products.component';
 import { LeasesComponent } from './leases.component';
 import { LeaseService } from './lease.service';
 import { AppRoutingModule }   from './app-routing.module';
+import { SecurityComponent }   from './security.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { AppRoutingModule }   from './app-routing.module';
   ShopComponent,
   ProductsComponent,
   LeasesComponent,
+  SecurityComponent
   ],
   imports: [
   BrowserModule,

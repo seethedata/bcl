@@ -1,29 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { OnInit } from '@angular/core';
 
 import { Product } from './product';
 import { Lease } from './lease';
-import { LeaseService } from './lease.service';
+import { LeaseService} from "./lease.service";
 
 @Component({
 	selector: 'leases',
 	templateUrl: './leases.component.html',
-	providers: [LeaseService]
+	providers: [ LeaseService ]
 })
 export class LeasesComponent implements OnInit{
-        leases: Lease[];
+	leases: Lease[];
+	constructor(private leaseService: LeaseService){}
 
 	selectedLease: Lease;
 
-        constructor(private leaseService: LeaseService){}
-
-        getLeases(): void {
+	getLeases(): void {
 		this.leaseService.getLeases().then(leases=>this.leases=leases);
-        }
-
-        ngOnInit(): void {
-                this.getLeases();
-        }
+	}
+	ngOnInit(): void {
+		this.getLeases();
+	}
 }
 
 

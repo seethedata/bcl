@@ -1,1 +1,17 @@
 <h1>Leases!</h1>
+<div> 
+<table>
+	<thead>
+	<tr>
+	<th>Product</th>
+	<th>Duration (Months)</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr *ngFor="let lease of leases">
+		<td>{{lease.product.name}}</td>
+		<td>{{lease.duration}}</td>
+	</tr>
+	</tbody>
+</table>
+</div>

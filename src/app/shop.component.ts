@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-
-import { Product } from './product';
 import { Lease } from './lease';
-import { LeaseService } from './lease.service';
+import { LeaseService } from "./lease.service";
 
 @Component({
 	selector: 'shop',
@@ -10,5 +8,11 @@ import { LeaseService } from './lease.service';
 	providers: [LeaseService]
 })
 export class ShopComponent {
-	constructor(leaseService: LeaseService) {}
+	constructor(private leaseService: LeaseService){};
+	leases: Lease[] = [];
+
+	getLeases(): void {
+                this.leaseService.getLeases().then(leases=>this.leases=leases);
+        }
+
 }
