@@ -9,7 +9,7 @@
 	</thead>
 	<tbody>
 	<tr *ngFor="let lease of leases">
-	<ng-container *ngIf="lease.assigned == true">
+	<ng-container *ngIf="lease.assigned == false">
 		<td>{{lease.product.name}}</td>
 		<td>{{lease.duration}}</td>
 		<td><button class="btn btn-primary">Add to Security</button>
