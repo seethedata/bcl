@@ -19,6 +19,7 @@ export class LeasesComponent implements OnInit{
 	getLeases(): void {
 		this.leaseService.getLeases().then(leases=>this.leases=leases);
 	}
+
 	ngOnInit(): void {
 		this.getLeases();
 	}

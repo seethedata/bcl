@@ -41,7 +41,7 @@ export class ProductsComponent implements OnInit{
 	addLease(product: Product): void {
 	console.log("AddLease");
 		this.selectedProduct=product;
-		let newLease = new Lease(product, this.selectedDuration);
+		let newLease = new Lease(product, this.selectedDuration, true);
 		this.leaseService.add(newLease);
 	}
 
