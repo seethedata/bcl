@@ -21,6 +21,23 @@ export class LeaseService {
 			.catch(this.handleError);
 	}
 
+	getUnassignedLeases(): Promise<Lease[]> {
+		return this.http.get(this.leasesUrl)
+			.toPromise()
+			.then(function(response) {
+				var leases = [];
+				var res;
+				res= response.json().data as Lease[];
+				res.forEach(function(lease) {
+					if (lease.assigned == false) {
+						leases.push(lease)
+					}
+				});
+				return leases;
+			})
+			.catch(this.handleError);
+
+	}
 	add(lease: Lease) : Promise<Lease> {
 		let headers = new Headers({ 'Content-Type': 'application/json' });
     		let options = new RequestOptions({ headers: headers });

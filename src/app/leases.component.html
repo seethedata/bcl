@@ -1,19 +1,19 @@
-<h1>Available Leases</h1>
 <div> 
 <table class="table">
 	<thead>
 	<tr>
 	<th>Product</th>
+	<th>Price</th>
 	<th>Duration (Months)</th>
+	<th>Assigned to Security</th>
 	</tr>
 	</thead>
 	<tbody>
 	<tr *ngFor="let lease of leases">
-	<ng-container *ngIf="lease.assigned == false">
 		<td>{{lease.product.name}}</td>
+		<td>{{lease.product.price}}</td>
 		<td>{{lease.duration}}</td>
-		<td><button class="btn btn-primary">Add to Security</button>
-	</ng-container>
+		<td>{{lease.assigned}}</td>
 	</tr>
 	</tbody>
 </table>
