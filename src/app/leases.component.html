@@ -9,7 +9,7 @@
 	</tr>
 	</thead>
 	<tbody>
-	<tr *ngFor="let lease of leases">
+	<tr *ngFor="let lease of leases" (click)="onSelect(lease)" [class.selected]="lease === selectedLease">
 		<td>{{lease.product.name}}</td>
 		<td>{{lease.product.price}}</td>
 		<td>{{lease.duration}}</td>

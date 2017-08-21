@@ -1,2 +1,19 @@
 <h1>Available Leases</h1>
-	<leases [leases]="unassignedLeases"></leases>
+<div>{{leases}}</div>
+<leases [leases]="unassignedLeases"></leases>
+<div class="text-center">
+	<button class="btn btn-primary" (click)="addLease()">Add</button>
+	<button class="btn btn-primary">Remove</button>
+</div>
+	<table class="table">
+		<tr>
+			<thead>
+				<th>Product</th>
+				<th>Duration</th>
+			</thead>
+		</tr>
+		<tr *ngFor="let lease of leases" (click)="onSelect(lease)" [class.selected]="lease === selectedLease">
+			<td>{{lease.product.name}}</td>
+			<td>{{lease.duration}}</td>
+		</tr>
+	</table>
