@@ -10,10 +10,12 @@
 	</thead>
 	<tbody>
 	<tr *ngFor="let lease of leases" (click)="onSelect(lease)" [class.selected]="lease === selectedLease">
+		<ng-container *ngIf="lease.assigned == false">
 		<td>{{lease.product.name}}</td>
 		<td>{{lease.product.price}}</td>
 		<td>{{lease.duration}}</td>
 		<td>{{lease.assigned}}</td>
+		</ng-container>
 	</tr>
 	</tbody>
 </table>

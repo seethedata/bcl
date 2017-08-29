@@ -1,19 +1,21 @@
 <h1>Available Leases</h1>
-<div>{{leases}}</div>
 <leases [leases]="unassignedLeases"></leases>
 <div class="text-center">
 	<button class="btn btn-primary" (click)="addLease()">Add</button>
-	<button class="btn btn-primary">Remove</button>
+	<button class="btn btn-primary" (click)="removeLease()">Remove</button>
 </div>
-	<table class="table">
-		<tr>
+	<label for="securityName">Security Name<input type="text" id="securityName" [(ngModel)]="security.name"  placeholder="Security Name"/>
+		<div>Leases:</div>
+		<table class="table" *ngIf="leases.length > 0">
 			<thead>
+		<tr>
 				<th>Product</th>
 				<th>Duration</th>
-			</thead>
 		</tr>
+			</thead>
 		<tr *ngFor="let lease of leases" (click)="onSelect(lease)" [class.selected]="lease === selectedLease">
 			<td>{{lease.product.name}}</td>
 			<td>{{lease.duration}}</td>
 		</tr>
 	</table>
+	<button class="btn btn-primary" (click)="saveSecurity()">Save</button>

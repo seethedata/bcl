@@ -1,0 +1,16 @@
+<div> 
+<table class="table">
+	<thead>
+	<tr>
+	<th>Leases</th>
+	<th>Owners</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr *ngFor="let security of security-list" (click)="onSelect(security)" [class.selected]="security === selectedSecurity">
+		<td>{{security.leases}}</td>
+		<td>{{security.owners}}</td>
+	</tr>
+	</tbody>
+</table>
+</div>

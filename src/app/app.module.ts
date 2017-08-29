@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule }    from '@angular/http';
+import { HttpModule } from '@angular/http';
+import { FormsModule} from '@angular/forms';
 
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -12,8 +13,11 @@ import { ProductService } from './product.service';
 import { ProductsComponent } from './products.component';
 import { LeasesComponent } from './leases.component';
 import { LeaseService } from './lease.service';
+import { SecurityService} from './security.service';
 import { AppRoutingModule }   from './app-routing.module';
 import { SecurityComponent }   from './security.component';
+import { SecurityListComponent }   from './security-list.component';
+import { SecuritiesComponent }   from './securities.component';
 
 
 @NgModule({
@@ -22,15 +26,18 @@ import { SecurityComponent }   from './security.component';
   ShopComponent,
   ProductsComponent,
   LeasesComponent,
-  SecurityComponent
+  SecurityComponent,
+  SecurityListComponent,
+  SecuritiesComponent
   ],
   imports: [
   BrowserModule,
   HttpModule,
+  FormsModule,
   InMemoryWebApiModule.forRoot(InMemoryDataService),
   AppRoutingModule
   ],
-  providers: [ProductService, LeaseService],
+  providers: [ProductService, LeaseService, SecurityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
