@@ -4,18 +4,63 @@
 	<button class="btn btn-primary" (click)="addLease()">Add</button>
 	<button class="btn btn-primary" (click)="removeLease()">Remove</button>
 </div>
-	<label for="securityName">Security Name<input type="text" id="securityName" [(ngModel)]="security.name"  placeholder="Security Name"/>
-		<div>Leases:</div>
+<div>
+	<form>
+		<div class="form-group">
+		<label for="securityName">Security Name</label>
+		<input type="text" id="securityName" [(ngModel)]="security.name"  name="name" placeholder="Security Name"/>
+		</div>
+		<div class="form-group">
 		<table class="table" *ngIf="leases.length > 0">
-			<thead>
-		<tr>
+		<thead>
+			<tr>
 				<th>Product</th>
 				<th>Duration</th>
-		</tr>
-			</thead>
+			</tr>
+		</thead>
+		<tbody>
 		<tr *ngFor="let lease of leases" (click)="onSelect(lease)" [class.selected]="lease === selectedLease">
 			<td>{{lease.product.name}}</td>
 			<td>{{lease.duration}}</td>
 		</tr>
-	</table>
-	<button class="btn btn-primary" (click)="saveSecurity()">Save</button>
+		</tbody>
+		</table>
+		</div>
+	</form>
+	<button class="btn btn-primary" data-toggle="modal" data-target="#saveModal" (click)="saveSecurity()">Save</button>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="saveModal">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+                                <h4 class="modal-title" id="modal-title">New Security Created</h4>
+			</div>
+			<div class="modal-body">
+				<div class="container">
+					<div>{{security.name}}</div>
+					<table class="table" *ngIf="leases.length > 0">
+					<thead>
+						<tr>
+						<th>Product</th>
+						<th>Duration</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let lease of leases" (click)="onSelect(lease)" [class.selected]="lease === selectedLease">
+						<td>{{lease.product.name}}</td>
+						<td>{{lease.duration}}</td>
+						</tr>
+					</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+

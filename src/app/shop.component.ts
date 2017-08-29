@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Lease } from './lease';
-import { LeaseService } from "./lease.service";
+import { LeaseService } from './lease.service';
 
 @Component({
 	selector: 'shop',
