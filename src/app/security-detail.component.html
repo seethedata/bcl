@@ -1,0 +1,38 @@
+<div *ngIf="security" id="security-detail" class="container-fluid">
+	<div class="row">
+		<div class="col-md-5">
+			<h2>Products</h2>
+			<table class="table">
+				<thead>
+					<tr><th>Product Name</th><th>Lease Duration</th></tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let lease of security.leases">
+						<td>{{lease.product.name}}</td>
+						<td>{{lease.duration}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-6">
+			<h2>Owners</h2>
+			<table class="table">
+				<thead>
+					<tr><th>Owner Name</th><th>Owner Share</th></tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let owner of security.owners">
+					<td>{{owner.name}}</td>
+					<td>{{owner.share}}</td>
+					</tr>
+					<tr> <td colspan=2>
+						<input type="text" id="addOwnerName" name="addOwnerName" placeholder="Owner Name" #ownerName/>
+						<input type="number" id="addOwnerShare" name="addOwnerShare" placeholder="Owner % Share" #ownerShare/>
+						<button [class.disabled]="security.completed == true" class="btn btn-primary" (click)="addOwner(ownerName.value,ownerShare.value)">Add Owner</button>
+						<button [class.disabled]="security.completed == true" class="btn btn-primary" (click)="complete()">Complete</button>
+					</td></tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

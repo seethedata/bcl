@@ -1,1 +1,8 @@
-<security-list></security-list>
+<div id="security-list">
+        <div *ngFor="let security of securities" (click)="onSelect(security)">
+		<button class="btn security" (click)="onSelect()" [class.completed]="security.completed == true" [class.selected]="security == selectedSecurity">
+			{{security.name}}
+		</button>
+	</div>
+</div>
+<security-detail [security]="selectedSecurity"></security-detail>

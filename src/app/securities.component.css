@@ -1,4 +1,7 @@
 a:link, a:hover, a:visited, a:active { text-decoration : none ; color : #000000 }
 
-.selected { background-color : #337ab7 ; color : #FFFFFF}
+.selected { background-color : #337ab7 !important;; color : #FFFFFF !important;}
 
+.security { margin : 0.3% ; color : #FFFFFF; background-color: #5cb85c ; width : 20%}
+
+.completed { background-color: #ABABAB; color : #000000}

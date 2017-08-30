@@ -16,8 +16,8 @@ import { LeaseService } from './lease.service';
 import { SecurityService} from './security.service';
 import { AppRoutingModule }   from './app-routing.module';
 import { SecurityComponent }   from './security.component';
-import { SecurityListComponent }   from './security-list.component';
 import { SecuritiesComponent }   from './securities.component';
+import { SecurityDetailComponent }   from './security-detail.component';
 
 
 @NgModule({
@@ -27,8 +27,8 @@ import { SecuritiesComponent }   from './securities.component';
   ProductsComponent,
   LeasesComponent,
   SecurityComponent,
-  SecurityListComponent,
-  SecuritiesComponent
+  SecuritiesComponent,
+  SecurityDetailComponent
   ],
   imports: [
   BrowserModule,

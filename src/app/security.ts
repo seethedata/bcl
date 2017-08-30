@@ -5,6 +5,7 @@ export class Security {
 constructor(	
 	public name: string,
 	public leases: Lease[],
-	public owners: Owner[]
+	public owners: Owner[],
+	public completed: boolean
 	){ }
 }

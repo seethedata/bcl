@@ -20,7 +20,7 @@ export class SecurityComponent implements OnInit{
 	leases: Lease[] = [];
 	@ViewChild(LeasesComponent) vc:LeasesComponent;
 	selectedLease: Lease;
-	security: Security = {name: "Default", leases: [], owners: []};
+	security: Security = {name: "", leases: [], owners: [], completed: false};
 
 
 	constructor(private leaseService: LeaseService, private securityService: SecurityService){}
@@ -54,7 +54,7 @@ export class SecurityComponent implements OnInit{
         }
 
 	saveSecurity() {
-	this.securityService.add({name: this.security.name,leases: this.leases, owners:[]});	
+	this.securityService.add({name: this.security.name,leases: this.leases, owners:[], completed: false});	
 
 	}
 }
