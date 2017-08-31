@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 
@@ -18,7 +18,6 @@ import { LeasesComponent } from './leases.component';
 export class SecurityComponent implements OnInit{
 	unassignedLeases: Lease[] = [];
 	leases: Lease[] = [];
-	@ViewChild(LeasesComponent) vc:LeasesComponent;
 	selectedLease: Lease;
 	security: Security = {name: "", leases: [], owners: [], completed: false};
 
@@ -35,10 +34,9 @@ export class SecurityComponent implements OnInit{
 	}
 
 	addLease(): void {
-		var selectedLease = this.vc.selectedLease;
-		selectedLease.assigned = true;
-		this.leases.push(selectedLease);
-		selectedLease=null;
+		this.selectedLease.assigned = true;
+		this.leases.push(this.selectedLease);
+		this.selectedLease=null;
 	}
 
 	removeLease(): void {

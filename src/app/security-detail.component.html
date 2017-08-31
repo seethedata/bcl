@@ -26,8 +26,8 @@
 					<td>{{owner.share}}</td>
 					</tr>
 					<tr> <td colspan=2>
-						<input type="text" id="addOwnerName" name="addOwnerName" placeholder="Owner Name" #ownerName/>
-						<input type="number" id="addOwnerShare" name="addOwnerShare" placeholder="Owner % Share" #ownerShare/>
+						<input type="text" [(ngModel)]="newOwner.name" id="addOwnerName" name="addOwnerName" placeholder="Owner Name" #ownerName/>
+						<input type="number" [(ngModel)]="newOwner.share" id="addOwnerShare" name="addOwnerShare" placeholder="Owner % Share" #ownerShare/>
 						<button [class.disabled]="security.completed == true" class="btn btn-primary" (click)="addOwner(ownerName.value,ownerShare.value)">Add Owner</button>
 						<button [class.disabled]="security.completed == true" class="btn btn-primary" (click)="complete()">Complete</button>
 					</td></tr>

@@ -1,4 +1,25 @@
-<leases [leases]="unassignedLeases"></leases>
+<div class="leases">
+<h3>Available Leases</h3>
+<table class="table">
+        <thead>
+        <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Duration (Months)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let lease of unassignedLeases" (click)="onSelect(lease)" [class.selected]="lease === selectedLease">
+                <ng-container *ngIf="lease.assigned == false">
+                <td>{{lease.product.name}}</td>
+                <td>{{lease.product.price}}</td>
+                <td>{{lease.duration}}</td>
+                </ng-container>
+        </tr>
+        </tbody>
+</table>
+</div>
+
 <div class="text-center">
 	<button class="btn btn-primary" (click)="addLease()"><span class="glyphicon glyphicon-arrow-down"></span> Add</button>
 	<button class="btn btn-primary" (click)="removeLease()">Remove<span class="glyphicon glyphicon-arrow-up"></span></button>

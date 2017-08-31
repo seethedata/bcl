@@ -27,15 +27,6 @@ export class SecuritiesComponent{
         ngOnInit(): void {
                 this.getSecurities();
         }
-
-
-	addOwner(ownerName: string, ownerShare: number) {
-	var newOwner: Owner;
-	newOwner.name=ownerName;
-	newOwner.share=ownerShare;
-	this.selectedSecurity.owners.push(newOwner);
-	}
-
 }
 
 

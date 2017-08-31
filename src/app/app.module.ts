@@ -12,6 +12,7 @@ import { ShopComponent } from './shop.component';
 import { ProductService } from './product.service';
 import { ProductsComponent } from './products.component';
 import { LeasesComponent } from './leases.component';
+import { LeaseDetailComponent } from './lease-detail.component';
 import { LeaseService } from './lease.service';
 import { SecurityService} from './security.service';
 import { AppRoutingModule }   from './app-routing.module';
@@ -26,6 +27,7 @@ import { SecurityDetailComponent }   from './security-detail.component';
   ShopComponent,
   ProductsComponent,
   LeasesComponent,
+  LeaseDetailComponent,
   SecurityComponent,
   SecuritiesComponent,
   SecurityDetailComponent
