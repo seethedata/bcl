@@ -1,4 +1,4 @@
-import { Injectable }    from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
@@ -8,19 +8,19 @@ import { Product } from './product';
 
 @Injectable()
 export class ProductService {
-	private productsUrl='api/products';
-	
-	constructor(private http: Http){ }
+    private productsUrl = 'api/products';
 
-	getProducts(): Promise<Product[]> {
-		return this.http.get(this.productsUrl)
-			.toPromise()
-			.then(response=>response.json().data as Product[])
-			.catch(this.handleError);
-	}
+    constructor(private http: Http) {}
 
-	private handleError(error: any): Promise<any> {
-		console.error('An error occurred', error); // for demo purposes only
-    		return Promise.reject(error.message || error);
-	}
+    getProducts(): Promise<Product[]> {
+        return this.http.get(this.productsUrl)
+            .toPromise()
+            .then(response => response.json().data as Product[])
+            .catch(this.handleError);
+    }
+
+    private handleError(error: any): Promise<any> {
+        console.error('An error occurred', error); // for demo purposes only
+            return Promise.reject(error.message || error);
+    }
 }

@@ -5,11 +5,11 @@ import { Owner } from './owner';
 
 
 @Component({
-	selector: 'lease-detail',
-	templateUrl: './lease-detail.component.html',
-	styleUrls: [ './lease-detail.component.css'],
+    selector: 'app-lease-detail',
+    templateUrl: './lease-detail.component.html',
+    styleUrls: [ './lease-detail.component.css'],
 })
 export class LeaseDetailComponent {
-	@Input() lease: Lease;
+    @Input() lease: Lease;
 
 }

@@ -6,23 +6,23 @@ import { Owner } from './owner';
 
 
 @Component({
-	selector: 'security-detail',
-	templateUrl: './security-detail.component.html',
-	styleUrls: [ './security-detail.component.css'],
+    selector: 'app-security-detail',
+    templateUrl: './security-detail.component.html',
+    styleUrls: [ './security-detail.component.css'],
 })
 export class SecurityDetailComponent {
-	@Input() security: Security;
+    @Input() security: Security;
 
-	newOwner: Owner = {name:null, share:null};
+    newOwner: Owner = {name: null, share: null};
 
-	addOwner() {
-		this.security.owners.push({name:this.newOwner.name,share:this.newOwner.share});
-		this.newOwner.name=null;
-		this.newOwner.share=null;
+    addOwner() {
+        this.security.owners.push({name: this.newOwner.name, share: this.newOwner.share});
+        this.newOwner.name = null;
+        this.newOwner.share = null;
         }
 
-	complete() {
-		this.security.completed = true;
-	}
+    complete() {
+        this.security.completed = true;
+    }
 
 }

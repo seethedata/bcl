@@ -5,7 +5,7 @@ import { FormsModule} from '@angular/forms';
 
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
+import { InMemoryDataService } from './in-memory-data.service';
 
 import { AppComponent } from './app.component';
 import { ShopComponent } from './shop.component';
@@ -15,10 +15,10 @@ import { LeasesComponent } from './leases.component';
 import { LeaseDetailComponent } from './lease-detail.component';
 import { LeaseService } from './lease.service';
 import { SecurityService} from './security.service';
-import { AppRoutingModule }   from './app-routing.module';
-import { SecurityComponent }   from './security.component';
-import { SecuritiesComponent }   from './securities.component';
-import { SecurityDetailComponent }   from './security-detail.component';
+import { AppRoutingModule } from './app-routing.module';
+import { SecurityComponent } from './security.component';
+import { SecuritiesComponent } from './securities.component';
+import { SecurityDetailComponent } from './security-detail.component';
 
 
 @NgModule({
