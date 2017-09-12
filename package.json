@@ -6,6 +6,7 @@
     "ng": "ng",
     "start": "ng serve --host=0.0.0.0",
     "build": "ng build",
+    "build:aot": "ngc -p tsconfig-aot.json && rollup -c rollup-config.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

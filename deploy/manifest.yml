@@ -1,0 +1,5 @@
+---
+applications:
+- name: bcl
+  memory: 512M
+buildpack: nodejs_buildpack

@@ -25,7 +25,7 @@ export class LeaseService {
         return this.http.get(this.leasesUrl)
             .toPromise()
             .then(function(response) {
-                let leases = [] ;
+                let leases = [] as Lease[];
                 let res = response.json().data as Lease[];
                 res.forEach(function(lease) {
                     if (lease.assigned === false) {
