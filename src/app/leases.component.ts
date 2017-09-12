@@ -18,14 +18,15 @@ export class LeasesComponent implements OnInit {
 
     constructor(private leaseService: LeaseService) {}
 
+    ngOnInit(): void {
+        this.getLeases();
+    }
+
     getLeases(): void {
         this.leaseService.getLeases()
         .then((leases) => this.leases = leases);
     }
 
-    ngOnInit(): void {
-        this.getLeases();
-    }
 
     onSelect(lease: Lease) {
         this.selectedLease = lease;
