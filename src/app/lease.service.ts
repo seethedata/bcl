@@ -17,7 +17,7 @@ export class LeaseService {
     getLeases(): Promise<Lease[]> {
         return this.http.get(this.leasesUrl)
             .toPromise()
-            .then(response => response.json().data as Lease[])
+            .then(response => { console.log(response); return response.json().data as Lease[];})
             .catch(this.handleError);
     }
 

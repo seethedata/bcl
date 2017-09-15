@@ -3,10 +3,6 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FormsModule} from '@angular/forms';
 
-// Imports for loading & configuring the in-memory web api
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
-
 import { AppComponent } from './app.component';
 import { ShopComponent } from './shop.component';
 import { ProductService } from './product.service';
@@ -36,7 +32,6 @@ import { SecurityDetailComponent } from './security-detail.component';
   BrowserModule,
   HttpModule,
   FormsModule,
-  InMemoryWebApiModule.forRoot(InMemoryDataService),
   AppRoutingModule
   ],
   providers: [ProductService, LeaseService, SecurityService],
