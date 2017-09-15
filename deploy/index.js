@@ -9,6 +9,18 @@ app.set('assets',__dirname + "./assets");
 
 app.use(express.static(__dirname));
 
+app.get('/api/leases', function(req, res){
+	res.sendFile(path.join(__dirname,'test.html'));
+});
+
+app.get('/api/products', function(req, res){
+	res.sendFile(path.join(__dirname,'test.html'));
+});
+
+app.get('/api/securities', function(req, res){
+	res.sendFile(path.join(__dirname,'test.html'));
+});
+
 app.get('*', function(req, res){
 	res.sendFile(path.join(__dirname,'index.html'));
 });

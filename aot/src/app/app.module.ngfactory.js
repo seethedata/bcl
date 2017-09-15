@@ -14,20 +14,17 @@ import * as i6 from './securities.component.ngfactory';
 import * as i7 from './app.component.ngfactory';
 import * as i8 from '@angular/common';
 import * as i9 from '@angular/platform-browser';
-import * as i10 from 'angular-in-memory-web-api/in-memory-backend.service';
-import * as i11 from '../../../src/app/in-memory-data.service';
-import * as i12 from '@angular/http';
-import * as i13 from 'angular-in-memory-web-api/in-memory-web-api.module';
-import * as i14 from '@angular/forms';
-import * as i15 from '@angular/router';
-import * as i16 from '../../../src/app/product.service';
-import * as i17 from '../../../src/app/lease.service';
-import * as i18 from '../../../src/app/security.service';
-import * as i19 from '../../../src/app/shop.component';
-import * as i20 from '../../../src/app/leases.component';
-import * as i21 from '../../../src/app/security.component';
-import * as i22 from '../../../src/app/securities.component';
-import * as i23 from '../../../src/app/app-routing.module';
+import * as i10 from '@angular/http';
+import * as i11 from '@angular/forms';
+import * as i12 from '@angular/router';
+import * as i13 from '../../../src/app/product.service';
+import * as i14 from '../../../src/app/lease.service';
+import * as i15 from '../../../src/app/security.service';
+import * as i16 from '../../../src/app/shop.component';
+import * as i17 from '../../../src/app/leases.component';
+import * as i18 from '../../../src/app/security.component';
+import * as i19 from '../../../src/app/securities.component';
+import * as i20 from '../../../src/app/app-routing.module';
 export var AppModuleNgFactory = i0.ɵcmf(i1.AppModule, [i2.AppComponent], function (_l) {
     return i0.ɵmod([i0.ɵmpd(512, i0.ComponentFactoryResolver, i0.ɵCodegenComponentFactoryResolver, [[8, [i3.ShopComponentNgFactory, i4.LeasesComponentNgFactory, i5.SecurityComponentNgFactory,
                     i6.SecuritiesComponentNgFactory, i7.AppComponentNgFactory]], [3, i0.ComponentFactoryResolver],
@@ -39,29 +36,28 @@ export var AppModuleNgFactory = i0.ɵcmf(i1.AppModule, [i2.AppComponent], functi
         }, [i8.DOCUMENT, i8.DOCUMENT, i8.DOCUMENT, i9.HAMMER_GESTURE_CONFIG]), i0.ɵmpd(4608, i9.EventManager, i9.EventManager, [i9.EVENT_MANAGER_PLUGINS, i0.NgZone]),
         i0.ɵmpd(135680, i9.ɵDomSharedStylesHost, i9.ɵDomSharedStylesHost, [i8.DOCUMENT]),
         i0.ɵmpd(4608, i9.ɵDomRendererFactory2, i9.ɵDomRendererFactory2, [i9.EventManager,
-            i9.ɵDomSharedStylesHost]), i0.ɵmpd(6144, i0.RendererFactory2, null, [i9.ɵDomRendererFactory2]), i0.ɵmpd(6144, i9.ɵSharedStylesHost, null, [i9.ɵDomSharedStylesHost]), i0.ɵmpd(4608, i0.Testability, i0.Testability, [i0.NgZone]), i0.ɵmpd(4608, i9.Meta, i9.Meta, [i8.DOCUMENT]), i0.ɵmpd(4608, i9.Title, i9.Title, [i8.DOCUMENT]), i0.ɵmpd(4608, i10.InMemoryDbService, i11.InMemoryDataService, []), i0.ɵmpd(5120, i12.XHRBackend, i13.inMemoryBackendServiceFactory, [i0.Injector, i10.InMemoryDbService, i10.InMemoryBackendConfig]), i0.ɵmpd(4608, i12.RequestOptions, i12.BaseRequestOptions, []), i0.ɵmpd(5120, i12.Http, i12.ɵc, [i12.XHRBackend, i12.RequestOptions]), i0.ɵmpd(4608, i12.BrowserXhr, i12.BrowserXhr, []), i0.ɵmpd(4608, i12.ResponseOptions, i12.BaseResponseOptions, []), i0.ɵmpd(5120, i12.XSRFStrategy, i12.ɵb, []), i0.ɵmpd(4608, i14.ɵi, i14.ɵi, []), i0.ɵmpd(5120, i15.ActivatedRoute, i15.ɵf, [i15.Router]), i0.ɵmpd(4608, i15.NoPreloading, i15.NoPreloading, []),
-        i0.ɵmpd(6144, i15.PreloadingStrategy, null, [i15.NoPreloading]), i0.ɵmpd(135680, i15.RouterPreloader, i15.RouterPreloader, [i15.Router, i0.NgModuleFactoryLoader,
-            i0.Compiler, i0.Injector, i15.PreloadingStrategy]), i0.ɵmpd(4608, i15.PreloadAllModules, i15.PreloadAllModules, []), i0.ɵmpd(5120, i15.ROUTER_INITIALIZER, i15.ɵi, [i15.ɵg]), i0.ɵmpd(5120, i0.APP_BOOTSTRAP_LISTENER, function (p0_0) {
+            i9.ɵDomSharedStylesHost]), i0.ɵmpd(6144, i0.RendererFactory2, null, [i9.ɵDomRendererFactory2]), i0.ɵmpd(6144, i9.ɵSharedStylesHost, null, [i9.ɵDomSharedStylesHost]), i0.ɵmpd(4608, i0.Testability, i0.Testability, [i0.NgZone]), i0.ɵmpd(4608, i9.Meta, i9.Meta, [i8.DOCUMENT]), i0.ɵmpd(4608, i9.Title, i9.Title, [i8.DOCUMENT]), i0.ɵmpd(4608, i10.BrowserXhr, i10.BrowserXhr, []), i0.ɵmpd(4608, i10.ResponseOptions, i10.BaseResponseOptions, []), i0.ɵmpd(5120, i10.XSRFStrategy, i10.ɵb, []), i0.ɵmpd(4608, i10.XHRBackend, i10.XHRBackend, [i10.BrowserXhr, i10.ResponseOptions, i10.XSRFStrategy]),
+        i0.ɵmpd(4608, i10.RequestOptions, i10.BaseRequestOptions, []), i0.ɵmpd(5120, i10.Http, i10.ɵc, [i10.XHRBackend, i10.RequestOptions]), i0.ɵmpd(4608, i11.ɵi, i11.ɵi, []), i0.ɵmpd(5120, i12.ActivatedRoute, i12.ɵf, [i12.Router]),
+        i0.ɵmpd(4608, i12.NoPreloading, i12.NoPreloading, []), i0.ɵmpd(6144, i12.PreloadingStrategy, null, [i12.NoPreloading]), i0.ɵmpd(135680, i12.RouterPreloader, i12.RouterPreloader, [i12.Router, i0.NgModuleFactoryLoader,
+            i0.Compiler, i0.Injector, i12.PreloadingStrategy]), i0.ɵmpd(4608, i12.PreloadAllModules, i12.PreloadAllModules, []), i0.ɵmpd(5120, i12.ROUTER_INITIALIZER, i12.ɵi, [i12.ɵg]), i0.ɵmpd(5120, i0.APP_BOOTSTRAP_LISTENER, function (p0_0) {
             return [p0_0];
-        }, [i15.ROUTER_INITIALIZER]), i0.ɵmpd(4608, i16.ProductService, i16.ProductService, [i12.Http]), i0.ɵmpd(4608, i17.LeaseService, i17.LeaseService, [i12.Http]),
-        i0.ɵmpd(4608, i18.SecurityService, i18.SecurityService, [i12.Http]), i0.ɵmpd(512, i8.CommonModule, i8.CommonModule, []), i0.ɵmpd(1024, i0.ErrorHandler, i9.ɵa, []), i0.ɵmpd(1024, i0.NgProbeToken, function () {
-            return [i15.ɵb()];
-        }, []), i0.ɵmpd(512, i15.ɵg, i15.ɵg, [i0.Injector]), i0.ɵmpd(1024, i0.APP_INITIALIZER, function (p0_0, p0_1, p1_0) {
-            return [i9.ɵc(p0_0, p0_1), i15.ɵh(p1_0)];
-        }, [[2, i9.NgProbeToken], [2, i0.NgProbeToken], i15.ɵg]), i0.ɵmpd(512, i0.ApplicationInitStatus, i0.ApplicationInitStatus, [[2, i0.APP_INITIALIZER]]), i0.ɵmpd(131584, i0.ɵe, i0.ɵe, [i0.NgZone, i0.ɵConsole, i0.Injector, i0.ErrorHandler, i0.ComponentFactoryResolver,
+        }, [i12.ROUTER_INITIALIZER]), i0.ɵmpd(4608, i13.ProductService, i13.ProductService, [i10.Http]), i0.ɵmpd(4608, i14.LeaseService, i14.LeaseService, [i10.Http]),
+        i0.ɵmpd(4608, i15.SecurityService, i15.SecurityService, [i10.Http]), i0.ɵmpd(512, i8.CommonModule, i8.CommonModule, []), i0.ɵmpd(1024, i0.ErrorHandler, i9.ɵa, []), i0.ɵmpd(1024, i0.NgProbeToken, function () {
+            return [i12.ɵb()];
+        }, []), i0.ɵmpd(512, i12.ɵg, i12.ɵg, [i0.Injector]), i0.ɵmpd(1024, i0.APP_INITIALIZER, function (p0_0, p0_1, p1_0) {
+            return [i9.ɵc(p0_0, p0_1), i12.ɵh(p1_0)];
+        }, [[2, i9.NgProbeToken], [2, i0.NgProbeToken], i12.ɵg]), i0.ɵmpd(512, i0.ApplicationInitStatus, i0.ApplicationInitStatus, [[2, i0.APP_INITIALIZER]]), i0.ɵmpd(131584, i0.ɵe, i0.ɵe, [i0.NgZone, i0.ɵConsole, i0.Injector, i0.ErrorHandler, i0.ComponentFactoryResolver,
             i0.ApplicationInitStatus]), i0.ɵmpd(2048, i0.ApplicationRef, null, [i0.ɵe]), i0.ɵmpd(512, i0.ApplicationModule, i0.ApplicationModule, [i0.ApplicationRef]),
-        i0.ɵmpd(512, i9.BrowserModule, i9.BrowserModule, [[3, i9.BrowserModule]]), i0.ɵmpd(512, i12.HttpModule, i12.HttpModule, []), i0.ɵmpd(512, i14.ɵba, i14.ɵba, []), i0.ɵmpd(512, i14.FormsModule, i14.FormsModule, []),
-        i0.ɵmpd(512, i13.InMemoryWebApiModule, i13.InMemoryWebApiModule, []),
-        i0.ɵmpd(1024, i15.ɵa, i15.ɵd, [[3, i15.Router]]), i0.ɵmpd(512, i15.UrlSerializer, i15.DefaultUrlSerializer, []), i0.ɵmpd(512, i15.ChildrenOutletContexts, i15.ChildrenOutletContexts, []), i0.ɵmpd(256, i15.ROUTER_CONFIGURATION, {}, []), i0.ɵmpd(1024, i8.LocationStrategy, i15.ɵc, [i8.PlatformLocation,
-            [2, i8.APP_BASE_HREF], i15.ROUTER_CONFIGURATION]), i0.ɵmpd(512, i8.Location, i8.Location, [i8.LocationStrategy]), i0.ɵmpd(512, i0.Compiler, i0.Compiler, []), i0.ɵmpd(512, i0.NgModuleFactoryLoader, i0.SystemJsNgModuleLoader, [i0.Compiler, [2, i0.SystemJsNgModuleLoaderConfig]]), i0.ɵmpd(1024, i15.ROUTES, function () {
+        i0.ɵmpd(512, i9.BrowserModule, i9.BrowserModule, [[3, i9.BrowserModule]]), i0.ɵmpd(512, i10.HttpModule, i10.HttpModule, []), i0.ɵmpd(512, i11.ɵba, i11.ɵba, []), i0.ɵmpd(512, i11.FormsModule, i11.FormsModule, []),
+        i0.ɵmpd(1024, i12.ɵa, i12.ɵd, [[3, i12.Router]]), i0.ɵmpd(512, i12.UrlSerializer, i12.DefaultUrlSerializer, []), i0.ɵmpd(512, i12.ChildrenOutletContexts, i12.ChildrenOutletContexts, []), i0.ɵmpd(256, i12.ROUTER_CONFIGURATION, {}, []), i0.ɵmpd(1024, i8.LocationStrategy, i12.ɵc, [i8.PlatformLocation,
+            [2, i8.APP_BASE_HREF], i12.ROUTER_CONFIGURATION]), i0.ɵmpd(512, i8.Location, i8.Location, [i8.LocationStrategy]), i0.ɵmpd(512, i0.Compiler, i0.Compiler, []), i0.ɵmpd(512, i0.NgModuleFactoryLoader, i0.SystemJsNgModuleLoader, [i0.Compiler, [2, i0.SystemJsNgModuleLoaderConfig]]), i0.ɵmpd(1024, i12.ROUTES, function () {
             return [[{ path: '', redirectTo: '/shop', pathMatch: 'full' }, { path: 'shop',
-                        component: i19.ShopComponent }, { path: 'leases', component: i20.LeasesComponent },
-                    { path: 'security', component: i21.SecurityComponent }, { path: 'securities',
-                        component: i22.SecuritiesComponent }]];
-        }, []), i0.ɵmpd(1024, i15.Router, i15.ɵe, [i0.ApplicationRef, i15.UrlSerializer,
-            i15.ChildrenOutletContexts, i8.Location, i0.Injector, i0.NgModuleFactoryLoader,
-            i0.Compiler, i15.ROUTES, i15.ROUTER_CONFIGURATION, [2, i15.UrlHandlingStrategy],
-            [2, i15.RouteReuseStrategy]]), i0.ɵmpd(512, i15.RouterModule, i15.RouterModule, [[2, i15.ɵa], [2, i15.Router]]), i0.ɵmpd(512, i23.AppRoutingModule, i23.AppRoutingModule, []), i0.ɵmpd(512, i1.AppModule, i1.AppModule, []),
-        i0.ɵmpd(256, i10.InMemoryBackendConfig, undefined, [])]);
+                        component: i16.ShopComponent }, { path: 'leases', component: i17.LeasesComponent },
+                    { path: 'security', component: i18.SecurityComponent }, { path: 'securities',
+                        component: i19.SecuritiesComponent }]];
+        }, []), i0.ɵmpd(1024, i12.Router, i12.ɵe, [i0.ApplicationRef, i12.UrlSerializer,
+            i12.ChildrenOutletContexts, i8.Location, i0.Injector, i0.NgModuleFactoryLoader,
+            i0.Compiler, i12.ROUTES, i12.ROUTER_CONFIGURATION, [2, i12.UrlHandlingStrategy],
+            [2, i12.RouteReuseStrategy]]), i0.ɵmpd(512, i12.RouterModule, i12.RouterModule, [[2, i12.ɵa], [2, i12.Router]]), i0.ɵmpd(512, i20.AppRoutingModule, i20.AppRoutingModule, []), i0.ɵmpd(512, i1.AppModule, i1.AppModule, [])]);
 });
 //# sourceMappingURL=app.module.ngfactory.js.map
