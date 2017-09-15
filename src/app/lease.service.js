@@ -19,7 +19,7 @@ var LeaseService = (function () {
     LeaseService.prototype.getLeases = function () {
         return this.http.get(this.leasesUrl)
             .toPromise()
-            .then(function (response) { return response.json().data; })
+            .then(function (response) { console.log(response); return response.json().data; })
             .catch(this.handleError);
     };
     LeaseService.prototype.getUnassignedLeases = function () {
