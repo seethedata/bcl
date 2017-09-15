@@ -16,20 +16,23 @@ import * as i6 from './securities.component.ngfactory';
 import * as i7 from './app.component.ngfactory';
 import * as i8 from '@angular/common';
 import * as i9 from '@angular/platform-browser';
-import * as i10 from 'angular-in-memory-web-api/in-memory-backend.service';
+import * as i10 from 'angular-in-memory-web-api/interfaces';
 import * as i11 from '../../../src/app/in-memory-data.service';
 import * as i12 from '@angular/http';
-import * as i13 from 'angular-in-memory-web-api/in-memory-web-api.module';
+import * as i13 from 'angular-in-memory-web-api/http-in-memory-web-api.module';
 import * as i14 from '@angular/forms';
 import * as i15 from '@angular/router';
-import * as i16 from '../../../src/app/product.service';
-import * as i17 from '../../../src/app/lease.service';
-import * as i18 from '../../../src/app/security.service';
-import * as i19 from '../../../src/app/shop.component';
-import * as i20 from '../../../src/app/leases.component';
-import * as i21 from '../../../src/app/security.component';
-import * as i22 from '../../../src/app/securities.component';
-import * as i23 from '../../../src/app/app-routing.module';
+import * as i16 from '@angular/common/http';
+import * as i17 from 'angular-in-memory-web-api/http-client-in-memory-web-api.module';
+import * as i18 from '../../../src/app/product.service';
+import * as i19 from '../../../src/app/lease.service';
+import * as i20 from '../../../src/app/security.service';
+import * as i21 from 'angular-in-memory-web-api/in-memory-web-api.module';
+import * as i22 from '../../../src/app/shop.component';
+import * as i23 from '../../../src/app/leases.component';
+import * as i24 from '../../../src/app/security.component';
+import * as i25 from '../../../src/app/securities.component';
+import * as i26 from '../../../src/app/app-routing.module';
 export const AppModuleNgFactory:i0.NgModuleFactory<i1.AppModule> = i0.ɵcmf(i1.AppModule,
     [i2.AppComponent],(_l:any) => {
       return i0.ɵmod([i0.ɵmpd(512,i0.ComponentFactoryResolver,i0.ɵCodegenComponentFactoryResolver,
@@ -54,7 +57,7 @@ export const AppModuleNgFactory:i0.NgModuleFactory<i1.AppModule> = i0.ɵcmf(i1.A
               [i9.ɵDomSharedStylesHost]),i0.ɵmpd(4608,i0.Testability,i0.Testability,
               [i0.NgZone]),i0.ɵmpd(4608,i9.Meta,i9.Meta,[i8.DOCUMENT]),i0.ɵmpd(4608,
               i9.Title,i9.Title,[i8.DOCUMENT]),i0.ɵmpd(4608,i10.InMemoryDbService,
-              i11.InMemoryDataService,([] as any[])),i0.ɵmpd(5120,i12.XHRBackend,i13.inMemoryBackendServiceFactory,
+              i11.InMemoryDataService,([] as any[])),i0.ɵmpd(5120,i12.XHRBackend,i13.httpInMemBackendServiceFactory,
               [i0.Injector,i10.InMemoryDbService,i10.InMemoryBackendConfig]),i0.ɵmpd(4608,
               i12.RequestOptions,i12.BaseRequestOptions,([] as any[])),i0.ɵmpd(5120,
               i12.Http,i12.ɵc,[i12.XHRBackend,i12.RequestOptions]),i0.ɵmpd(4608,i12.BrowserXhr,
@@ -68,14 +71,16 @@ export const AppModuleNgFactory:i0.NgModuleFactory<i1.AppModule> = i0.ɵcmf(i1.A
               i15.PreloadAllModules,([] as any[])),i0.ɵmpd(5120,i15.ROUTER_INITIALIZER,
               i15.ɵi,[i15.ɵg]),i0.ɵmpd(5120,i0.APP_BOOTSTRAP_LISTENER,(p0_0:any) => {
             return [p0_0];
-          },[i15.ROUTER_INITIALIZER]),i0.ɵmpd(4608,i16.ProductService,i16.ProductService,
-              [i12.Http]),i0.ɵmpd(4608,i17.LeaseService,i17.LeaseService,[i12.Http]),
-          i0.ɵmpd(4608,i18.SecurityService,i18.SecurityService,[i12.Http]),i0.ɵmpd(512,
-              i8.CommonModule,i8.CommonModule,([] as any[])),i0.ɵmpd(1024,i0.ErrorHandler,
-              i9.ɵa,([] as any[])),i0.ɵmpd(1024,i0.NgProbeToken,() => {
-            return [i15.ɵb()];
-          },([] as any[])),i0.ɵmpd(512,i15.ɵg,i15.ɵg,[i0.Injector]),i0.ɵmpd(1024,i0.APP_INITIALIZER,
-              (p0_0:any,p0_1:any,p1_0:any) => {
+          },[i15.ROUTER_INITIALIZER]),i0.ɵmpd(5120,i16.HttpBackend,i17.httpClientInMemBackendServiceFactory,
+              [i10.InMemoryDbService,i10.InMemoryBackendConfig,i16.XhrFactory]),i0.ɵmpd(4608,
+              i18.ProductService,i18.ProductService,[i12.Http]),i0.ɵmpd(4608,i19.LeaseService,
+              i19.LeaseService,[i12.Http]),i0.ɵmpd(4608,i20.SecurityService,i20.SecurityService,
+              [i12.Http]),i0.ɵmpd(512,i8.CommonModule,i8.CommonModule,([] as any[])),
+          i0.ɵmpd(1024,i0.ErrorHandler,i9.ɵa,([] as any[])),i0.ɵmpd(1024,i0.NgProbeToken,
+              () => {
+                return [i15.ɵb()];
+              },([] as any[])),i0.ɵmpd(512,i15.ɵg,i15.ɵg,[i0.Injector]),i0.ɵmpd(1024,
+              i0.APP_INITIALIZER,(p0_0:any,p0_1:any,p1_0:any) => {
                 return [i9.ɵc(p0_0,p0_1),i15.ɵh(p1_0)];
               },[[2,i9.NgProbeToken],[2,i0.NgProbeToken],i15.ɵg]),i0.ɵmpd(512,i0.ApplicationInitStatus,
               i0.ApplicationInitStatus,[[2,i0.APP_INITIALIZER]]),i0.ɵmpd(131584,i0.ɵe,
@@ -85,7 +90,7 @@ export const AppModuleNgFactory:i0.NgModuleFactory<i1.AppModule> = i0.ɵcmf(i1.A
           i0.ɵmpd(512,i9.BrowserModule,i9.BrowserModule,[[3,i9.BrowserModule]]),i0.ɵmpd(512,
               i12.HttpModule,i12.HttpModule,([] as any[])),i0.ɵmpd(512,i14.ɵba,i14.ɵba,
               ([] as any[])),i0.ɵmpd(512,i14.FormsModule,i14.FormsModule,([] as any[])),
-          i0.ɵmpd(512,i13.InMemoryWebApiModule,i13.InMemoryWebApiModule,([] as any[])),
+          i0.ɵmpd(512,i21.InMemoryWebApiModule,i21.InMemoryWebApiModule,([] as any[])),
           i0.ɵmpd(1024,i15.ɵa,i15.ɵd,[[3,i15.Router]]),i0.ɵmpd(512,i15.UrlSerializer,
               i15.DefaultUrlSerializer,([] as any[])),i0.ɵmpd(512,i15.ChildrenOutletContexts,
               i15.ChildrenOutletContexts,([] as any[])),i0.ɵmpd(256,i15.ROUTER_CONFIGURATION,
@@ -96,15 +101,15 @@ export const AppModuleNgFactory:i0.NgModuleFactory<i1.AppModule> = i0.ɵcmf(i1.A
               [i0.Compiler,[2,i0.SystemJsNgModuleLoaderConfig]]),i0.ɵmpd(1024,i15.ROUTES,
               () => {
                 return [[{path:'',redirectTo:'/shop',pathMatch:'full'},{path:'shop',
-                    component:i19.ShopComponent},{path:'leases',component:i20.LeasesComponent},
-                    {path:'security',component:i21.SecurityComponent},{path:'securities',
-                        component:i22.SecuritiesComponent}]];
+                    component:i22.ShopComponent},{path:'leases',component:i23.LeasesComponent},
+                    {path:'security',component:i24.SecurityComponent},{path:'securities',
+                        component:i25.SecuritiesComponent}]];
               },([] as any[])),i0.ɵmpd(1024,i15.Router,i15.ɵe,[i0.ApplicationRef,i15.UrlSerializer,
               i15.ChildrenOutletContexts,i8.Location,i0.Injector,i0.NgModuleFactoryLoader,
               i0.Compiler,i15.ROUTES,i15.ROUTER_CONFIGURATION,[2,i15.UrlHandlingStrategy],
               [2,i15.RouteReuseStrategy]]),i0.ɵmpd(512,i15.RouterModule,i15.RouterModule,
-              [[2,i15.ɵa],[2,i15.Router]]),i0.ɵmpd(512,i23.AppRoutingModule,i23.AppRoutingModule,
+              [[2,i15.ɵa],[2,i15.Router]]),i0.ɵmpd(512,i26.AppRoutingModule,i26.AppRoutingModule,
               ([] as any[])),i0.ɵmpd(512,i1.AppModule,i1.AppModule,([] as any[])),
           i0.ɵmpd(256,i10.InMemoryBackendConfig,(undefined as any),([] as any[]))]);
     });
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvdmFncmFudC9nby9zcmMvZ2l0aHViLmNvbS9zZWV0aGVkYXRhL2JjbC9zcmMvYXBwL2FwcC5tb2R1bGUubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vaG9tZS92YWdyYW50L2dvL3NyYy9naXRodWIuY29tL3NlZXRoZWRhdGEvYmNsL3NyYy9hcHAvYXBwLm1vZHVsZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIgIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvdmFncmFudC9nby9zcmMvZ2l0aHViLmNvbS9zZWV0aGVkYXRhL2JjbC9zcmMvYXBwL2FwcC5tb2R1bGUubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vaG9tZS92YWdyYW50L2dvL3NyYy9naXRodWIuY29tL3NlZXRoZWRhdGEvYmNsL3NyYy9hcHAvYXBwLm1vZHVsZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIgIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7In0=
