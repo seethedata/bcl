@@ -3,3 +3,6 @@ applications:
 - name: bcl
   memory: 512M
 buildpack: nodejs_buildpack
+env:
+        BLOCKCHAINAPI : "147.178.206.104:8545"
+
