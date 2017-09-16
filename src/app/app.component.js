@@ -5,6 +5,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { Component } from '@angular/core';
+import { enableProdMode } from '@angular/core';
+enableProdMode();
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'BuCkLe';

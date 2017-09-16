@@ -19,7 +19,6 @@ var ProductsComponent = (function () {
     ProductsComponent.prototype.getProducts = function () {
         var _this = this;
         this.productService.getProducts().then(function (products) { return _this.products = products; });
-        this.productService.getProducts().then(function (products) { return console.log(products); });
     };
     ProductsComponent.prototype.ngOnInit = function () {
         this.getProducts();
