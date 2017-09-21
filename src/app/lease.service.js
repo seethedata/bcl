@@ -14,7 +14,7 @@ import 'rxjs/add/operator/toPromise';
 var LeaseService = (function () {
     function LeaseService(http) {
         this.http = http;
-        this.leasesUrl = 'api/leases';
+        this.leasesUrl = '/api/leases';
     }
     LeaseService.prototype.getLeases = function () {
         return this.http.get(this.leasesUrl)
@@ -40,7 +40,7 @@ var LeaseService = (function () {
     LeaseService.prototype.add = function (lease) {
         var headers = new Headers({ 'Content-Type': 'application/json' });
         var options = new RequestOptions({ headers: headers });
-        return this.http.post(this.leasesUrl, JSON.stringify(lease), options).toPromise()
+        return this.http.post(this.leasesUrl + '/add', JSON.stringify(lease), options).toPromise()
             .then(this.extractData)
             .catch(this.handleError);
     };
