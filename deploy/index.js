@@ -8,6 +8,9 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
+const userAddress=process.env.USERADDRESS;
+const userPassword=process.env.USERPASSWORD;
+
 const Web3 = require('web3');
 const web3 = new Web3();
 web3.setProvider(new web3.providers.HttpProvider('http://' + process.env.BLOCKCHAINAPI ));
@@ -114,17 +117,18 @@ app.get('/api/leases', function(req, res){
 
 app.post('/api/leases/add', function(req, res) {
     console.log('Adding lease');
+    console.log(req.body.product);
     const duration=req.body.duration;
     const lease = new web3.eth.Contract(leaseABI);
-    web3.eth.personal.unlockAccount('0xbc006b353770becc7fdecfd11eff9633a3ea651f','password01');
-    lease.deploy({data: leaseByteCode}).send({from: '0xbc006b353770becc7fdecfd11eff9633a3ea651f', gas: 4700000})
+    web3.eth.personal.unlockAccount(userAddress,userPassword);
+    lease.deploy({data: leaseByteCode}).send({from: userAddress, gas: 4700000})
         .on('error', function(error){console.error(error);})
         .then(function(newContractInstance){
                console.log(newContractInstance.options.address);
-                newContractInstance.methods.setDuration(duration).send({from: '0xbc006b353770becc7fdecfd11eff9633a3ea651f', gas: 4700000})
+                newContractInstance.methods.setDuration(duration).send({from: userAddress, gas: 4700000})
                 .on('error', function(error){console.error(error);})
                 .on('receipt',function(receipt){newContractInstance.methods.getDuration()
-                        .call({from: '0xbc006b353770becc7fdecfd11eff9633a3ea651f'}).then(console.log);
+                        .call({from: userAddress}).then(console.log);
                 });
         });
     });
