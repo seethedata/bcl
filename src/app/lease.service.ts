@@ -11,7 +11,7 @@ import { Product } from './product';
 
 @Injectable()
 export class LeaseService {
-    private leasesUrl = 'api/leases';
+    private leasesUrl = '/api/leases';
     constructor(private http: Http) {}
 
     getLeases(): Promise<Lease[]> {
@@ -40,7 +40,7 @@ export class LeaseService {
     add(lease: Lease): Promise<Lease> {
         const headers = new Headers({ 'Content-Type': 'application/json' });
         const options = new RequestOptions({ headers: headers });
-        return this.http.post(this.leasesUrl, JSON.stringify(lease), options).toPromise()
+        return this.http.post(this.leasesUrl + '/add', JSON.stringify(lease), options).toPromise()
             .then(this.extractData)
                     .catch(this.handleError);
         }
