@@ -120,18 +120,32 @@ app.post('/api/leases/add', function(req, res) {
     console.log(req.body.product);
     const duration=req.body.duration;
     const lease = new web3.eth.Contract(leaseABI);
-    web3.eth.personal.unlockAccount(userAddress,userPassword);
+    web3.eth.personal.unlockAccount(userAddress,userPassword, 
+            function(error,result){
+                if(error) {
+                    console.error(error);
+                }
+            });
     lease.deploy({data: leaseByteCode}).send({from: userAddress, gas: 4700000})
         .on('error', function(error){console.error(error);})
         .then(function(newContractInstance){
-               console.log(newContractInstance.options.address);
-                newContractInstance.methods.setDuration(duration).send({from: userAddress, gas: 4700000})
-                .on('error', function(error){console.error(error);})
-                .on('receipt',function(receipt){newContractInstance.methods.getDuration()
-                        .call({from: userAddress}).then(console.log);
+            const newAddress=newContractInstance.options.address;
+            console.log( newAddress );
+            newContractInstance.methods.setDuration(duration).send({from: userAddress, gas: 4700000})
+                .on('error', function(error){
+	                res.jsonp({error: error});
+                    console.error(error);
+                 })
+                .on('receipt',function(receipt){
+                    newContractInstance.methods.getDuration()
+                        .call({from: userAddress})
+                        .then(function(result) {
+                            console.log(result); 
+                            res.jsonp({data: [{result: "SUCCESS", address: newAddress}]});
+                        });
                 });
-        });
-    });
+            });
+});
 
 app.get('*', function(req, res){
 	res.sendFile(path.join(__dirname,'index.html'));
