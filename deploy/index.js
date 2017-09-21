@@ -5,6 +5,10 @@ const httpServer = http.Server(app);
 
 const path = require('path');
 
+const Web3 = require('web3');
+const web3 = new Web3();
+web3.setProvider(new web3.providers.HttpProvider('http://' + process.env.BLOCKCHAINAPI ));
+
 app.set('assets',__dirname + "./assets");
 
 app.use(express.static(__dirname));
@@ -103,9 +107,6 @@ app.get('/api/leases', function(req, res){
 });
 
 app.get('*', function(req, res){
-    const Web3 = require('web3');
-    const web3 = new Web3();
-    web3.setProvider(new web3.providers.HttpProvider('http://' + process.env.BLOCKCHAINAPI ));
 	res.sendFile(path.join(__dirname,'index.html'));
 });
 
