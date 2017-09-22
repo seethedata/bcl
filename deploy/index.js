@@ -125,25 +125,25 @@ app.post('/api/leases/add', function(req, res) {
                 if(error) {
                     console.error(error);
                 }
-            });
-    lease.deploy({data: leaseByteCode}).send({from: userAddress, gas: 4700000})
-        .on('error', function(error){console.error(error);})
-        .then(function(newContractInstance){
-            const newAddress=newContractInstance.options.address;
-            console.log( newAddress );
-            newContractInstance.methods.setDuration(duration).send({from: userAddress, gas: 4700000})
-                .on('error', function(error){
-	                res.jsonp({error: error});
-                    console.error(error);
-                 })
-                .on('receipt',function(receipt){
-                    newContractInstance.methods.getDuration()
-                        .call({from: userAddress})
-                        .then(function(result) {
-                            console.log(result); 
-                            res.jsonp({data: [{result: "SUCCESS", address: newAddress}]});
-                        });
-                });
+			    lease.deploy({data: leaseByteCode}).send({from: userAddress, gas: 4700000})
+			    .on('error', function(error){console.error(error);})
+			    .then(function(newContractInstance){
+			        const newAddress=newContractInstance.options.address;
+			        console.log( newAddress );
+			        newContractInstance.methods.setDuration(duration).send({from: userAddress, gas: 4700000})
+			        .on('error', function(error){
+				        res.jsonp({error: error});
+			            console.error(error);
+			         })
+			        .on('receipt',function(receipt){
+			            newContractInstance.methods.getDuration()
+			            .call({from: userAddress})
+			            .then(function(result) {
+			                    console.log(result); 
+			                    res.jsonp({data: [{result: "SUCCESS", address: newAddress}]});
+			            });
+                    });
+			    });
             });
 });
 
